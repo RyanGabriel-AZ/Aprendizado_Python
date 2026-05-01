@@ -23,6 +23,66 @@ print(" meu nome \n quebrou página \t dei tab \\ isso é uma barra \' isso é u
 print(" Aqui temos abc agora temos abc\b, eu acabei de dar um backspace")
 print("ABCrepetiu\rDEF")# ele volta pro inicio da frase e substitui ABC por DEF
 
+espaco= "               aqui                   "
+hastag= "####toma##"
+print(lista.upper()) #deixa tudo em caixa alta
+print(lista.lower()) #deixa tudo em caixa  baixa
+print(espaco.strip()) #remove espaço do inicio e do fim da string. 
+print(hastag.strip("#")) # vai remover as # do inicio e fim do texto. ou seja, podemos ficar com o meio
+
+#Aqui vamos agora manipular as strings, como se fossemos tratar dados
+texto= "pesquisa"
+subtexto= "qui"
+print( texto.find(subtexto)) # ele vai procurar o subtexto do texto, e retornar a posição em que inicia
+print( subtexto in texto) #verifica se o subtexto está em texto
+print( texto.replace("quisa", "ca" )) #  replace( " parte antiga", "parte nova"), ele substitui o antigo pelo novo
+# Podemos usar para limpar dados como datas também, etc
+
+print( len(texto)) # retorna o tamnho do texto
+print( texto.count(subtexto)) #mostra quantas vezes o termo apareceu na string
+print( texto.startswith(subtexto))# ele verifica se o texto começa com o termo, pode colocar mais de um subtexto, retorna true ou false
+print(texto.endswith(subtexto))# ele verifica se o texto termina com o termo, pode colocar mais de um subtexto, retorna true ou false
+# eles são usados por exemplo para verificar se um arquivo termina com termo especifico, emails, hotmais, .csv, .pdf, etc
+
+# agora essencial para verificar dados, separar, juntar, etc
+texto= "Hoje eu vivo livre"
+termos= texto.split() # podemos separar termos com o split, e isso gera um array com os termos. eu deixei em vazio, porque
+#queria separar espaços, mas podemos colocar ou tros termos, como virgulas, letras, etc
+print(termos) # vai printar a lista ['Hoje', 'eu', 'vivo', 'livre']
+texto= ".".join(termos) # o Join faz o contrário do split, ele vai juntar os termos do array. mas entre os termos será colocado o que 
+#foi colocado no " "
+print(texto) # Hoje.eu.vivo.livre
+
+texto = "6"
+tamanho = 4
+codigo= texto.zfill( tamanho) # 0006
+print(codigo)
+#basicamente o zfill ele preenche com 0 a esquerda  do texto , até completar o tamanho. pode até ter letras
+
+#validando dados em strings. Vamos usar a função isTIPO(), isso vai retornar F ou V, se atender as condições, tem várias
+#vou colocar algumas
+numero= "123"
+numero_texto= "123abc"
+numero_espaco= "1 2"
+texto= "abc"
+print(numero.isdigit()) # ve se tem só digitos
+print(numero_espaco.isdigit()) # falso
+print(texto.isalpha()) # ve se so tem letra
+print(numero_texto.isalpha()) # falso
+print(numero_texto.isalnum()) # Ve se tem letras e numeros, sem espaços
+print(numero_espaco.isalnum()) #falso, tem espaço
+
+idade = 10
+nome= "joão"
+print(f" meu nome é {nome} e minha idade é {idade}")# isso é uma formatação de string. esse f lá no começo
+
+#podemos transformar tipos
+numero= 10
+texto= str(numero) # vai transformar o numero/float em texto
+flutuante = float(texto) # transformar o texto/numero em float, mas se o texto for em letras, dá erro 
+numero= int(flutuante) # tranforma o texto/flutuante em numero, mas se o texto for em letras, dá erro , e também ele vai cortar casas decimais
+
+
 
 #ok agora vamos usar o numeros
 # NUmeros podem ser atribuidos a variaveis, podem ser pontos flutuantes, ter expressões, etc
